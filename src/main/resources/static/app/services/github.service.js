@@ -20,11 +20,11 @@ var GithubService = (function () {
         this.username = "ojedawinder";
     }
     GithubService.prototype.getUser = function () {
-        return this._http.get('http://api.github.com/users/' + this.username + '?client_id=' + this.client_id + '&client_secret=' + this.client_secret)
+        return this._http.get('https://api.github.com/users/' + this.username + '?client_id=' + this.client_id + '&client_secret=' + this.client_secret)
             .map(function (res) { return res.json(); });
     };
     GithubService.prototype.getRepos = function () {
-        return this._http.get('http://api.github.com/users/' + this.username + '/repos?client_id=' + this.client_id + '&client_secret=' + this.client_secret)
+        return this._http.get('https://api.github.com/users/' + this.username + '/repos?client_id=' + this.client_id + '&client_secret=' + this.client_secret)
             .map(function (res) { return res.json(); });
     };
     GithubService.prototype.updateUser = function (username) {
