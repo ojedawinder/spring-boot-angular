@@ -1,0 +1,20 @@
+spring:
+  profiles:
+    active: prod
+  resources:
+    chain:
+      strategy:
+        fixed:
+          enabled: true
+          paths: /**
+          version: v5
+
+type: Framework
+name: Spring Boot ${type}
+my:
+  messageValue: ${random.int(1,10)}
+security:
+  user:
+    name: winder
+    password: 310888
+
