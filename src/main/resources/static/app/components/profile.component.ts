@@ -11,9 +11,14 @@ export class ProfileComponent {
 	user:any;
 	repos:any[];
 	username:string;
+	title:string;
 
 	constructor(private _githubService: GithubService){
 		this.user = false;
+
+		this._githubService.getTitle().subscribe( resp => {
+			this.title = resp.title;
+		});
 	}
 
 	searchUser(){
@@ -25,6 +30,7 @@ export class ProfileComponent {
 
 		this._githubService.getRepos().subscribe( repos => {
 			this.repos = repos;
-		});	
+		});
+
 	}
 }

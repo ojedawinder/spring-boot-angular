@@ -1,5 +1,7 @@
 package com.oreilly.boot;
 
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
@@ -22,6 +24,8 @@ public class Application {
 	@Autowired
 	MyMessage myMessage;
 	
+	HashMap<String, String> response;
+	
 	/*@RequestMapping("/")
 	public String home(){
 		String value = args.getOptionNames().iterator().next();
@@ -31,6 +35,15 @@ public class Application {
 	@RequestMapping("/viewResolver")
 	public String viewResolver(){
 		return "viewResolver";
+	}
+	
+	@RequestMapping("/title")
+	public HashMap<String, String> title(){
+		System.out.println("retornando titulo");
+		response = new HashMap<String, String>();
+		response.put("status", "200");
+		response.put("title", "Github Search by @ojedawinder");
+		return response;
 	}
 
 	public static void main(String[] args) {

@@ -16,12 +16,16 @@ var GithubService = (function () {
         this._http = _http;
         this.client_id = '1d0125927697cc3d93c9';
         this.client_secret = '6cfa4145b0d2d706c3a0cd8be60a0068856a7542';
+        this.host = 'http://localhost:8080';
         console.log('Github service ready..');
         this.username = "ojedawinder";
     }
     GithubService.prototype.getUser = function () {
         return this._http.get('https://api.github.com/users/' + this.username + '?client_id=' + this.client_id + '&client_secret=' + this.client_secret)
             .map(function (res) { return res.json(); });
+    };
+    GithubService.prototype.getTitle = function () {
+        return this._http.get(this.host + '/title').map(function (res) { return res.json(); });
     };
     GithubService.prototype.getRepos = function () {
         return this._http.get('https://api.github.com/users/' + this.username + '/repos?client_id=' + this.client_id + '&client_secret=' + this.client_secret)
