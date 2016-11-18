@@ -16,7 +16,7 @@ var GithubService = (function () {
         this._http = _http;
         this.client_id = '1d0125927697cc3d93c9';
         this.client_secret = '6cfa4145b0d2d706c3a0cd8be60a0068856a7542';
-        this.host = 'http://localhost:8080';
+        this.host = 'https://spring-boot-w.herokuapp.com';
         console.log('Github service ready..');
         this.username = "ojedawinder";
     }

@@ -8,7 +8,7 @@ export class GithubService{
 	private client_id = '1d0125927697cc3d93c9';
 	private client_secret = '6cfa4145b0d2d706c3a0cd8be60a0068856a7542';
 	private title:string;
-	private host = 'http://localhost:8080';
+	private host = 'https://spring-boot-w.herokuapp.com';
 
 	constructor(private _http: Http){
 		console.log('Github service ready..');
