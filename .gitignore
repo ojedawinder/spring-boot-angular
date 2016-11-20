@@ -9,5 +9,3 @@ target/
 .settings
 .springBeans
 
-src/main/resources/static/app/
-
